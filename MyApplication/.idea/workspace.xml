@@ -8,59 +8,48 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bae96e96-b1b7-442c-b0af-732c050e2edf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/cal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/androidTest/java/com/example/testproject/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/java/com/example/testproject/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/app/src/test/java/com/example/testproject/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testProject/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_S_API_30]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -72,6 +61,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
@@ -84,7 +74,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="My_Application.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -154,5 +144,26 @@
       <updated>1602739762836</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="262" y="148" width="1012" height="787" key="AVDManager" timestamp="1602739974449">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="262" y="148" width="1012" height="787" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1602739974449" />
+    <state x="348" y="296" key="AndroidCreateResourceFileDialog" timestamp="1602740177856">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="348" y="296" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602740177856" />
   </component>
 </project>
