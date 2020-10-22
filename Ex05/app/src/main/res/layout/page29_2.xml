@@ -4,12 +4,31 @@
 
     <TextView
         android:id="@+id/baseTxt"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="전화번호"/>
     <EditText
+        android:id="@+id/number"
         android:layout_toRightOf="@+id/baseTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="000-000-0000"/>
+
+    <Button
+        android:id="@+id/insert"
+        android:layout_toLeftOf="@+id/cencel"
+        android:layout_below="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="입력"/>
+
+    <Button
+        android:id="@+id/cencel"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="취소"/>
+
 </RelativeLayout>
