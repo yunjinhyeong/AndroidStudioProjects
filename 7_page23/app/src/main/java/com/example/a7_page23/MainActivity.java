@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         button1 = (Button)findViewById(R.id.button1);
         registerForContextMenu(button1);
         button2 = (Button)findViewById(R.id.button2);
-        registerForContextMenu(button2);
+        registerForContextMenu(button2); //컨텍스트 메뉴가 연결되어야 하는 View를 등록합니다. 이를 위해서는 registerForContextMenu()를 호출하고 여기에 View를 전달하면 됩니다.
     }
 
     @Override
