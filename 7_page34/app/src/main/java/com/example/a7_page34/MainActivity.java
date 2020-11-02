@@ -10,6 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     Button button1;
+    boolean[] checkArray = new boolean[] {false, false, false};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String[] versionArray = new String[] {"롤리팝", "마시멜로", "누가"};
-                final boolean[] checkArray = new boolean[] {true, false, false};
+
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                 dlg.setTitle("좋아하는 버전은?");
                 dlg.setIcon(R.mipmap.ic_launcher);
@@ -27,7 +28,14 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                                button1.setText(versionArray[which]);
+                                String str="";
+                                for (int i = 0; i < checkArray.length; i++) {
+                                    if (checkArray[i]) {
+                                        str = str + versionArray[i] +", ";
+                                        checkArray[i]=true;
+                                    }
+                                }
+                                button1.setText(str);
                             }
                         });
 //                dlg.setItems(versionArray, new DialogInterface.OnClickListener() {
