@@ -18,6 +18,13 @@
         </activity>
         <activity android:name=".FirstActivity" android:label="First 액티비티"/>
         <activity android:name=".SecondActivity" android:label="Second 액티비티"/>
-    </application>
+        <activity android:name=".ThirdActivity" android:label="Third 액티비티"/>
+        <activity android:name=".FourthActivity" android:label="Fourth 액티비티"/>
+        <activity android:name=".ResultActivity" android:label="Result 액티비티"/>
+        <activity android:name=".FifthActivity" android:label="Fifth 액티비티"/>
+        <activity android:name=".Fifth2Activity" android:label="Fifth2 액티비티"/>
+        <activity android:name=".Cal" android:label="Cal 액티비티"/>
+        <activity android:name=".Cal2" android:label="Cal2 액티비티"/>
 
+    </application>
 </manifest>
