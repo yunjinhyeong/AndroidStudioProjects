@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(getApplicationContext(), page13.class);
                         startActivity(intent);
                         break;
-//                    case R.id.btnThirdActivity:
-//                        intent = new Intent(getApplicationContext(), ThirdActivity.class);
-//                        startActivity(intent);
-//                        break;
-//                    case R.id.btnFourthActivity:
-//                        intent = new Intent(getApplicationContext(), FourthActivity.class);
-//                        startActivity(intent);
-//                        break;
+                    case R.id.btnThirdActivity:
+                        intent = new Intent(getApplicationContext(), page22.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.btnFourthActivity:
+                        intent = new Intent(getApplicationContext(), page28.class);
+                        startActivity(intent);
+                        break;
 //                    case R.id.btnFifthActivity:
 //                        intent = new Intent(getApplicationContext(), FifthActivity.class);
 //                        startActivity(intent);

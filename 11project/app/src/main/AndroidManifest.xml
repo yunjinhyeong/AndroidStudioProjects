@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".page7" android:label="page7"/>
         <activity android:name=".page13" android:label="page13"/>
+        <activity android:name=".page22" android:label="page22"/>
+        <activity android:name=".page28" android:label="page28"/>
 
     </application>
 

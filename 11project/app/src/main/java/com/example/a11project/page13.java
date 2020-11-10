@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 
@@ -24,6 +25,8 @@ public class page13 extends AppCompatActivity {
         final GridView gv = (GridView) findViewById(R.id.gridView1);
         MyGridAdapter gAdapter = new MyGridAdapter(this);
         gv.setAdapter(gAdapter);
+
+
     }
 
     public class MyGridAdapter extends BaseAdapter{
@@ -96,6 +99,8 @@ public class page13 extends AppCompatActivity {
             });
             return imageView;
         }
+
+
 
 
     }
