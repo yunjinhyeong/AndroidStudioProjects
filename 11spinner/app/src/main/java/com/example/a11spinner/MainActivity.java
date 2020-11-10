@@ -1,4 +1,4 @@
-package com.example.a11project;
+package com.example.a11spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-public class page28 extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -18,7 +18,6 @@ public class page22 extends AppCompatActivity {
     TextView toastText;
     View toastView;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
