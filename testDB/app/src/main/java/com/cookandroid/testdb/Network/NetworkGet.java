@@ -25,9 +25,7 @@ public class NetworkGet extends AsyncTask<String, Void, String> {
         this.adapter = adapter;
     }
 
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
+    protected void onPreExecute() { super.onPreExecute(); }
     @Override
     protected String doInBackground(String... strings) {
         String res = "";
@@ -63,7 +61,7 @@ public class NetworkGet extends AsyncTask<String, Void, String> {
             e.printStackTrace();
         }
         Log.i("Get result", res);
-        return res; // return Result
+        return res; // return Result  // onPostExecute으로 자동 리턴 s로 됨
     }
 
     protected void onPostExecute(String s) {

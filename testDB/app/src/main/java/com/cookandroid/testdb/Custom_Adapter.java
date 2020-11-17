@@ -5,15 +5,21 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cookandroid.testdb.Network.NetworkDelete;
+import com.cookandroid.testdb.Network.NetworkGet;
+import com.cookandroid.testdb.Network.NetworkInsert;
+import com.cookandroid.testdb.Network.NetworkUpdate;
 
 import java.util.ArrayList;
 
@@ -28,6 +34,7 @@ public class Custom_Adapter extends BaseAdapter {
         mListLayout = listLayout;
         mUserInfoObjArr = userInfoObjArrayListT;
         mInflater = (LayoutInflater) a.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
     }
 
     public void setDatas(ArrayList<UserInfo> arrayList) {
@@ -72,8 +79,34 @@ public class Custom_Adapter extends BaseAdapter {
         Button updateButton = (Button) view.findViewById(R.id.btnUpdate);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                LayoutInflater layoutInflater = (LayoutInflater)mAct.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View v = layoutInflater.inflate(R.layout.dialog_modify, null);
+                TextView modID = (TextView) v.findViewById(R.id.modID);
+                modID.setText(mUserInfoObjArr.get(i).id);
+                new androidx.appcompat.app.AlertDialog.Builder(mAct)
+                        .setTitle("수정하기")
+                        .setView(v)
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                String id = modID.getText().toString();
+                                String name = ((EditText)v.findViewById(R.id.modName)).getText().toString();
+                                String phone = ((EditText)v.findViewById(R.id.modPhone)).getText().toString();
+                                String grade = ((EditText)v.findViewById(R.id.modGrade)).getText().toString();
 
+                                new NetworkUpdate(Custom_Adapter.this).execute(id, name, phone, grade);
+                                Toast.makeText(mAct, "수정완료", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        })
+                        .setCancelable(false)
+                        .show();
             }
         });
 
@@ -90,11 +123,12 @@ public class Custom_Adapter extends BaseAdapter {
                     @Override
                     public void onClick(DialogInterface dialog, int whichButton) {
                         new NetworkDelete(Custom_Adapter.this).execute(tvID.getText().toString());
+                        Toast.makeText(mAct, "삭제하였습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
                 ad.setPositiveButton("취소", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(DialogInterface dialog, int whichButton) {
                         Toast.makeText(mAct, "취소하였습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });

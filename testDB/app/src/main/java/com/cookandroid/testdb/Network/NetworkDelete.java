@@ -5,10 +5,12 @@ import android.os.AsyncTask;
 import com.cookandroid.testdb.Custom_Adapter;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class NetworkDelete extends AsyncTask<String, Void, String> {
@@ -54,7 +56,9 @@ public class NetworkDelete extends AsyncTask<String, Void, String> {
                 builder.append(line+ "\n");
             }
             res = builder.toString();
-        } catch (Exception e) {
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return res; // return Result
@@ -71,7 +75,7 @@ public class NetworkDelete extends AsyncTask<String, Void, String> {
         if(res == 0) {
 
         } else {
-            new NetworkGet(adapter).execute("");
+            new NetworkGet(adapter).equals("");
         }
     }
 }
