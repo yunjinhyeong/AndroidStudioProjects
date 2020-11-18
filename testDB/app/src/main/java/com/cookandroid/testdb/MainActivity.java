@@ -17,9 +17,10 @@ import com.cookandroid.testdb.Network.NetworkInsert;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private Button refreshBtn, addBtn;
+    private Button refreshBtn, addBtn, btnSearch;
     private ListView listView;
     private Custom_Adapter adapter;
+    private EditText etSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 new NetworkGet((Custom_Adapter) listView.getAdapter()).execute(""); // 전체 불러오기
             }
         });
+
+        btnSearch = (Button) findViewById(R.id.btnSearch);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = ((EditText)findViewById(R.id.etSearch)).getText().toString();
+                new NetworkGet(adapter).execute(id);
+            }
+        });
+
+
 
         addBtn = (Button)findViewById(R.id.btn_add);
         addBtn.setOnClickListener(new View.OnClickListener() {
