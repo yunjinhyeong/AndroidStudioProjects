@@ -1,63 +1,85 @@
-public class MainActivity extends ActionBarActivity {
-    final int DIALOG_MULTICHOICE = 4; // 다이얼로그용 ID
-    TextView tv; // 결과값 출력용
+package com.cookandroid.testdb.Network;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+import android.os.AsyncTask;
+import android.util.Log;
 
-        tv = (TextView) findViewById(R.id.textView2);
-        findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog(DIALOG_MULTICHOICE);
-            }
-        });
-    } // end of onCreate
+import com.cookandroid.testdb.Custom_Adapter;
+import com.cookandroid.testdb.UserInfo;
 
-    @Override
-    @Deprecated
-    protected Dialog onCreateDialog(int id) {
-        switch(id) {
-            case DIALOG_MULTICHOICE :
-                AlertDialog.Builder builder =
-                        new AlertDialog.Builder(MainActivity.this);
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 
-                final String data []   = {"한국","북한","소련","영국"};
-                final boolean checked[]= {true,  false, true,  false};
+public class NetworkGet extends AsyncTask<String, Void, String> {
+    private URL Url;
+    private String URL_Adress = "http://10.100.103.25/testDB/testDB.jsp";
+    private Custom_Adapter adapter;
 
-                builder    .setTitle("MuiltiChoice 다이얼로그 제목")
-                        .setPositiveButton("선택완료",
-                                new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        String str = "선택된 값은 : ";
-                                        for (int i = 0; i < checked.length; i++) {
-                                            if (checked[i]) {
-                                                str = str + data[i] +", ";
-                                            }
-                                        }
-                                        tv.setText(str);
-                                    }
-                                })
-                        .setNegativeButton("취소", null)
-                        .setMultiChoiceItems
-                                (data, // 체크박스 리스트 항목
-                                        checked, // 초기값(선택여부) 배열
-                                        new OnMultiChoiceClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog,
-                                                                int which, boolean isChecked) {
-                                                checked[which] = isChecked;
-                                            }
-                                        }); // 리스너
-                return builder.create(); // 다이얼로그 생성해서 리턴
-        }
-
-        return super.onCreateDialog(id);
+    public NetworkGet(Custom_Adapter adapter) {
+        this.adapter = adapter;
     }
-} // end of class
 
+    protected void onPreExecute() { super.onPreExecute(); }
+    @Override
+    protected String doInBackground(String... strings) {
+        String res = "";
+        try {
+            Url = new URL(URL_Adress);
+            HttpURLConnection conn = (HttpURLConnection) Url.openConnection();
+            // 전송모드 설정
+            conn.setDefaultUseCaches(false);
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
+            conn.setRequestMethod("POST");
+            // content-type 설정
+            conn.setRequestProperty("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
+            // 전송값 설정
+            StringBuffer buffer = new StringBuffer();
+            buffer.append("id").append("=").append(strings[0]);
+            // 서버로 전송
+            OutputStreamWriter outStream = new OutputStreamWriter(conn.getOutputStream(), "utf-8");
+            PrintWriter writer = new PrintWriter(outStream);
+            writer.write(buffer.toString());
+            writer.flush();
 
-출처: https://bitsoul.tistory.com/17 [Happy Programmer~]
+            StringBuilder builder = new StringBuilder();
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
+            String line;
+            while ((line = in.readLine()) != null) {
+                builder.append(line+ "\n");
+            }
+            res = builder.toString();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Log.i("Get result", res);
+        return res; // return Result  // onPostExecute으로 자동 리턴 s로 됨
+    }
+
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
+
+        ArrayList<UserInfo> userList = new ArrayList<UserInfo>(); // 데이터 받을 곳
+        int count = 0;
+        try {
+            count = JsonParser.getUserInfoJson(s, userList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(count == 0) {
+
+        } else {
+            adapter.setDatas(userList);
+            adapter.notifyDataSetInvalidated();
+        }
+    }
+}
+
