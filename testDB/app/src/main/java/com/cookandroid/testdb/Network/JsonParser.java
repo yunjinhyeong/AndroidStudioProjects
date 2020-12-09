@@ -28,7 +28,6 @@ public class JsonParser {
             else
                 strID=jsonObj.getString("ID").toString();
 
-
             if (jsonObj.getString("NAME").toString().equals("null"))
                 strName="-";
             else

@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         addBtn = (Button)findViewById(R.id.btn_add);
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
